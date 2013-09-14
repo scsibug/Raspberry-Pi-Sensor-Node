@@ -1,3 +1,6 @@
+Sensor monitoring for Raspberry Pi.  Copyright (c) 2013 Greg Heartsfield.
+Based on Adafruit's Raspberry-Pi Python Code Library.  BSD-licensed.
+
 Adafruit's Raspberry-Pi Python Code Library
 ============
   Here is a growing collection of libraries and example python scripts
