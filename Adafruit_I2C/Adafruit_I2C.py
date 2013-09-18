@@ -36,6 +36,27 @@ class Adafruit_I2C :
       busnum if busnum >= 0 else Adafruit_I2C.getPiI2CBusNumber())
     self.debug = debug
 
+  def write0(self):
+    "Puts only device address on bus with write bit set"
+    try:
+      self.bus.write_quick(self.address)
+      if (self.debug):
+        print("I2C: Cannot access device")
+    except IOError, err:
+      print "Error accessing 0x%02X: Check your I2C address" % self.address
+      return -1
+
+  def read0(self):
+    "reads I2C bus"
+    try:
+      result = self.bus.read_byte(self.address)
+      if (self.debug):
+        print "I2C: Device 0x%02X error" % self.address
+      return result
+    except IOError, err:
+      print "Error accessing 0x%02X: Check your I2C address" % self.address
+      return -1
+
   def reverseByteOrder(self, data):
     "Reverses the byte order of an int (16-bit) or long (32-bit) value"
     # Courtesy Vishal Sapre

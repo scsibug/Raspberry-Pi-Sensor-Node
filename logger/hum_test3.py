@@ -1,3 +1,4 @@
+# this example came from http://www.raspberrypi.org/phpBB3/viewtopic.php?f=32&t=29454&sid=4543fbd8f48478644e608d741309c12b&start=25
 import smbus
 import time
 b = smbus.SMBus(1)
