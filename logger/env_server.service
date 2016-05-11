@@ -1,0 +1,13 @@
+[Unit]
+Description=Environmental Monitoring
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Raspberry-Pi-Sensor-Node/logger
+ExecStart=/usr/bin/python /home/pi/Raspberry-Pi-Sensor-Node/logger/env_server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
